@@ -1,0 +1,1 @@
+a REST API resource books including the main CRUD operations using prisma
