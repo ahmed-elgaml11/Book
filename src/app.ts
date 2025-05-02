@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import path from 'path'
-dotenv.config({path: path.join(__dirname, '../config.env')})
+dotenv.config({path: path.join(__dirname, '../.env')})
 import api from './api/index'
 import errorHandler from './middlewares/errorHandler'
 import { CustomError } from './types/customeError'
@@ -26,7 +26,7 @@ app.use(errorHandler)
 
 
 
-const  PORT  = process.env.PORT || 3000
+const  PORT  = process.env.PORT 
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`)
 })

@@ -17,6 +17,8 @@ datasource db {
 model Book {
   id       String @id @default(uuid())
   author   String @unique
+  name     String
+  year     Int
   pages    Int?
   language Lang   @default(arabic)
 }

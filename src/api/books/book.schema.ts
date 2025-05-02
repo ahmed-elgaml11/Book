@@ -3,7 +3,9 @@ import z from 'zod'
 const bookBodySchema = z.object({
     author: z.string().min(1, 'author is required'),
     pages: z.number().int().positive({message: 'pages must be a positive number'}).optional(),
-    language: z.enum(['arabic', 'english', 'french']).default('arabic')
+    language: z.enum(['arabic', 'english', 'french']).default('arabic'),
+    name: z.string(),
+    year: z.number().positive('pages must be a positive number').int()
 }).strict()
 
 

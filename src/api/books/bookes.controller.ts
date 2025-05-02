@@ -3,9 +3,16 @@ import { catchAsync } from "../../utils/catchAsync";
 import * as Services from './books.services'
 import { bookResponse } from '../../types/bookResponse';
 import { CustomError } from '../../types/customeError';
+import { APIFeatures } from '../../utils/queryFeatures';
 
 export const getAll = catchAsync(async (req: Request, res: Response<bookResponse>, next: NextFunction) => {
-    const books = await Services.getAll();
+    const query = new APIFeatures(req.query)
+        .filter()
+        .sort()
+        .select()
+        .paginate()
+        .query
+    const books = await Services.getAll(query);
     res.status(200).json({
         status: 'success',
         data: {

@@ -1,12 +1,15 @@
 import { PrismaClient } from '../../../generated/prisma'
 import { Book } from '../../types/bookResponse'
 const prisma = new PrismaClient()
+import { BookFeatures } from '../../types/bookFeatures'
 
 
 const book = prisma.book
 
-export const getAll = async() => {
-    return book.findMany()
+export const getAll = async(query: BookFeatures) => {
+    return book.findMany({
+        ...query
+    })
 }
 
 export const addBook = async (body: Book) => {

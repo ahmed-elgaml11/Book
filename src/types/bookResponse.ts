@@ -1,6 +1,8 @@
 export type Book = {
     id: string;
     author: string;
+    name: string
+    year: number
     pages?: number | null;
     language: 'arabic' | 'english' | 'french';
 };
