@@ -2,7 +2,7 @@ import { AnyZodObject, z } from 'zod';
 import { catchAsync } from '../utils/catchAsync';
 import { Request, Response, NextFunction } from 'express';
 import { CustomError } from '../types/customeError';
-import * as Services from '../api/books/books.services'
+import * as Services from '../api/books/book.services'
 export const validateRequest = (schema: AnyZodObject) => {
     return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
         const result = schema.safeParse({

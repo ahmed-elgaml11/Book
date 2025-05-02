@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { catchAsync } from "../../utils/catchAsync";
-import * as Services from './books.services'
+import * as Services from './book.services'
 import { bookResponse } from '../../types/bookResponse';
 import { CustomError } from '../../types/customeError';
 import { APIFeatures } from '../../utils/queryFeatures';

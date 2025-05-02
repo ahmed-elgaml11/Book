@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import * as bookController from './bookes.controller'
+import * as bookController from './book.controller'
 import { validateRequest } from '../../middlewares/validateRequest'
 import { createBodySchema, getBodySchema, updateBodySchema } from "./book.schema";
 router.route('/')

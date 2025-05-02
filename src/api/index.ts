@@ -1,6 +1,6 @@
 import express from "express";
 import {firstResponse} from "../types/firstResponse";
-import bookRoutes from './books/books.routes'
+import bookRoutes from './books/book.routes'
 
 const router = express.Router();
 
